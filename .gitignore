@@ -1,0 +1,9 @@
+*.class
+.classpath
+.project
+.springBeans
+.settings/
+target/
+classes/
+lib/
+appengine-generated/
