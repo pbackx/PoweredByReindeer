@@ -1,15 +1,15 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <parent>
-   	<groupId>com.vaadinengine</groupId>
-  	<artifactId>vaadin-engine</artifactId>
+   	<groupId>com.pow</groupId>
+  	<artifactId>pow</artifactId>
   	<version>0.0.1-SNAPSHOT</version>
   </parent>
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>vaadin-engine-demo</artifactId>
+	<artifactId>pow-demo</artifactId>
 	<packaging>war</packaging>
-	<name>vaadin-engine demo webapp</name>
-	<url>http://github.com/pbackx/Vaadin-Engine</url>
+	<name>Powered by Reindeer demo webapp</name>
+	<url>http://www.streamhead.com/vaadin-engine-security-release/</url>
 	
 	<dependencies>
     <dependency>
