@@ -13,13 +13,13 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package com.vaadinengine.ui.user.function;
+package com.pow.ui.user.function;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 
-import com.vaadinengine.MainApplication;
-import com.vaadinengine.domain.user.User;
+import com.pow.MainApplication;
+import com.pow.domain.user.User;
 
 public class LogoutFunction implements Function {
 

@@ -13,7 +13,7 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package com.vaadinengine;
+package com.pow;
 
 import java.util.ResourceBundle;
 
@@ -21,10 +21,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Configurable;
 
 import com.vaadin.Application;
-import com.vaadinengine.ui.MainWindow;
-import com.vaadinengine.ui.user.LoginForm.LoggedinEvent;
-import com.vaadinengine.ui.user.LoginForm.LoggedinListener;
-import com.vaadinengine.ui.user.function.Functions;
+import com.pow.ui.MainWindow;
+import com.pow.ui.user.LoginForm.LoggedinEvent;
+import com.pow.ui.user.LoginForm.LoggedinListener;
+import com.pow.ui.user.function.Functions;
 
 @Configurable
 public class MainApplication extends Application implements LoggedinListener {

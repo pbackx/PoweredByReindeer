@@ -13,14 +13,14 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package com.vaadinengine.ui.user;
+package com.pow.ui.user;
 
 import com.vaadin.data.Item;
 import com.vaadin.ui.Component;
 import com.vaadin.ui.Field;
 import com.vaadin.ui.FormFieldFactory;
 import com.vaadin.ui.TextField;
-import com.vaadinengine.MainApplication;
+import com.pow.MainApplication;
 
 public class LoginFormFieldFactory implements FormFieldFactory {
 

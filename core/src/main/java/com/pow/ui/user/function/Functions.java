@@ -13,19 +13,25 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package com.vaadinengine.ui.user.function;
+package com.pow.ui.user.function;
 
 import java.io.Serializable;
+import java.util.List;
 
-import com.vaadinengine.MainApplication;
-import com.vaadinengine.domain.user.User;
+public class Functions implements Serializable {
 
-public interface Function extends Serializable {
-
-	void launch(MainApplication application);
+	private static final long serialVersionUID = 1L;
 	
-	boolean isAvailable(User user);
+	private List<Function> functions;
+
+	public List<Function> getFunctions() {
+		return functions;
+	}
+
+	public void setFunctions(List<Function> functions) {
+		this.functions = functions;
+	}
 	
-	String getCaptionKey();
+	
 	
 }

@@ -30,9 +30,9 @@
   		<servlet-name>VaadinEngine Application</servlet-name>
   		<servlet-class>com.vaadin.terminal.gwt.server.GAEApplicationServlet</servlet-class>
   		<init-param>
-  			<description>Vaadin application class to start</description>
+  			<description>Powered by Reindeer main app</description>
   			<param-name>application</param-name>
-  			<param-value>com.vaadinengine.MainApplication</param-value>
+  			<param-value>com.pow.MainApplication</param-value>
   		</init-param>
   	</servlet>
   	<servlet-mapping>

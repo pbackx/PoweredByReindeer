@@ -13,37 +13,35 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package com.vaadinengine.ui.user.function;
+package com.pow.ui.user.function;
 
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.authority.GrantedAuthorityImpl;
 import org.springframework.security.core.context.SecurityContextHolder;
 
-import com.vaadinengine.MainApplication;
-import com.vaadinengine.domain.user.User;
+import com.pow.MainApplication;
+import com.pow.domain.user.User;
+import com.pow.ui.user.LoginWindow;
 
-public class AdminFunction implements Function {
+public class LoginFunction implements Function {
 
 	private static final long serialVersionUID = 1L;
 
 	@Override
 	public String getCaptionKey() {
-		return "AdminFunction.caption";
+		return "LoginFunction.caption";
 	}
 
 	@Override
 	public boolean isAvailable(User user) {
 		final Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-		if(authentication!=null && authentication.getAuthorities().contains(new GrantedAuthorityImpl("ROLE_ADMIN")))
-		{
-			return true;
-		}
-		return false;
+		return authentication==null || "anonymousUser".equals(authentication.getPrincipal());
 	}
 
 	@Override
 	public void launch(MainApplication application) {
-		application.getMainWindow().showNotification("executing sample admin function");
+		final LoginWindow loginWindow = new LoginWindow(application);
+		application.getMainWindow().addWindow(loginWindow);
+		loginWindow.addListener(application);
 	}
 
 }

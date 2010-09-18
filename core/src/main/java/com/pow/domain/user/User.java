@@ -13,7 +13,7 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package com.vaadinengine.domain.user;
+package com.pow.domain.user;
 
 import java.io.Serializable;
 

@@ -13,18 +13,18 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package com.vaadinengine.ui;
+package com.pow.ui;
 
 import com.vaadin.ui.Button;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Window;
 import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.Button.ClickListener;
-import com.vaadinengine.MainApplication;
-import com.vaadinengine.domain.user.User;
-import com.vaadinengine.ui.user.LoginForm.LoggedinEvent;
-import com.vaadinengine.ui.user.LoginForm.LoggedinListener;
-import com.vaadinengine.ui.user.function.Function;
+import com.pow.MainApplication;
+import com.pow.domain.user.User;
+import com.pow.ui.user.LoginForm.LoggedinEvent;
+import com.pow.ui.user.LoginForm.LoggedinListener;
+import com.pow.ui.user.function.Function;
 
 public class MainWindow extends Window implements LoggedinListener {
 

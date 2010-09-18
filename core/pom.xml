@@ -132,7 +132,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>vaadin-engine-core</finalName>
+		<finalName>pow-core</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>

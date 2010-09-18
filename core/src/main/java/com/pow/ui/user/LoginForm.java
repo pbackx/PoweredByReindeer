@@ -13,7 +13,7 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package com.vaadinengine.ui.user;
+package com.pow.ui.user;
 
 import java.io.Serializable;
 import java.lang.reflect.Method;
@@ -29,8 +29,8 @@ import com.vaadin.ui.Form;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.Button.ClickListener;
-import com.vaadinengine.MainApplication;
-import com.vaadinengine.domain.user.User;
+import com.pow.MainApplication;
+import com.pow.domain.user.User;
 
 public class LoginForm extends Form implements ClickListener {
 

@@ -28,16 +28,16 @@
  
 	<context:annotation-config />
 	<context:spring-configured />
-	<context:component-scan base-package="com.vaadinengine" />
+	<context:component-scan base-package="com.pow" />
 
 	<!-- user functions -->
 	
-	<bean id="userFunctions" class="com.vaadinengine.ui.user.function.Functions">
+	<bean id="userFunctions" class="com.pow.ui.user.function.Functions">
 		<property name="functions">
 			<list>
-				<bean class="com.vaadinengine.ui.user.function.LoginFunction" />
-				<bean class="com.vaadinengine.ui.user.function.LogoutFunction" />
-				<bean class="com.vaadinengine.ui.user.function.AdminFunction" />
+				<bean class="com.pow.ui.user.function.LoginFunction" />
+				<bean class="com.pow.ui.user.function.LogoutFunction" />
+				<bean class="com.pow.ui.user.function.AdminFunction" />
 			</list>
 		</property>
 	</bean>

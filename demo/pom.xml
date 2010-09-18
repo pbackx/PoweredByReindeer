@@ -13,14 +13,14 @@
 	
 	<dependencies>
     <dependency>
-     	<groupId>com.vaadinengine</groupId>
-    	<artifactId>vaadin-engine-core</artifactId>
+     	<groupId>com.pow</groupId>
+    	<artifactId>pow-core</artifactId>
     	<version>${project.version}</version>
     </dependency>
 	</dependencies>
 
 	<build>
-		<finalName>vaadin-engine-demo</finalName>
+		<finalName>pow-demo</finalName>
 		<outputDirectory>src/main/webapp/WEB-INF/classes</outputDirectory>
 		<plugins>
 			<plugin>
