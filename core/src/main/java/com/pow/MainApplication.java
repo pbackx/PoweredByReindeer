@@ -46,7 +46,7 @@ public class MainApplication extends Application implements LoggedinListener {
 	
 	@Override
 	public void init() {
-		i18n = ResourceBundle.getBundle("com.vaadinengine.i18n.VaadinEngineBundle", getLocale());
+		i18n = ResourceBundle.getBundle("com.pow.i18n.PowBundle", getLocale());
 		
 		mainWindow = new MainWindow(this);
 		setMainWindow(mainWindow);

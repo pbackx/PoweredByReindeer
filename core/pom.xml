@@ -6,10 +6,14 @@
   		<version>0.0.1-SNAPSHOT</version>
   	</parent>
 	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.pow</groupId>
 	<artifactId>pow-core</artifactId>
-	<name>Powered by Reindeer</name>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+	<name>Powered by Reindeer core</name>
+	<description>Powered by Reindeer is a high-level application framework integrating Vaadin, Spring and Google AppEngine.
+	This is the core of the project which you'll want to depend on in your own.</description>
 	<url>http://www.streamhead.com/vaadin-engine-security-release/</url>
-	
 	<licenses>
         <license>
             <name>Apache License 2.0</name>
@@ -17,6 +21,22 @@
             <distribution>repo</distribution>
         </license>
     </licenses>
+	<scm>
+		<url>http://github.com/pbackx/PoweredByReindeer</url>
+		<connection>git@github.com:pbackx/PoweredByReindeer.git</connection>
+	</scm>
+	<developers>
+		<developer>
+			<id>pbackx</id>
+			<name>Peter Backx</name>
+			<email>peter.backx@gmail.com</email>
+			<url>http://www.streamhead.com</url>
+			<roles>
+				<role>architect</role>
+				<role>developer</role>
+			</roles>
+		</developer>
+  	</developers>
 	
 	<dependencies>
 		<dependency>
@@ -142,6 +162,30 @@
 					<target>1.6</target>
 					<encoding>ISO-8859-1</encoding>
 				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>

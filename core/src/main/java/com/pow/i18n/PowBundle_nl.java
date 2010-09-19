@@ -13,12 +13,12 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package com.vaadinengine.i18n;
+package com.pow.i18n;
 
 import java.io.Serializable;
 import java.util.ListResourceBundle;
 
-public class VaadinEngineBundle_en extends ListResourceBundle implements Serializable {
+public class PowBundle_nl extends ListResourceBundle implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 
@@ -28,20 +28,21 @@ public class VaadinEngineBundle_en extends ListResourceBundle implements Seriali
 	}
 	
     static final Object[][] contents = {
-    	{"MainWindow.title","Vaadin-Engine, putting the Vaadin in AppEngine"},
-    	{"MainWindow.loggedin","Login successful"},
+    	{"MainWindow.title","Vaadin-Engine, Vaadin en Google AppEngine, zo eenvoudig kan het zijn"},
+    	{"MainWindow.loggedin", "Je bent succesvol ingelogged."},
     	
-    	{"LoginFunction.caption", "Login"},
-    	{"LogoutFunction.caption", "Logout"},
+    	{"LoginFunction.caption", "Inloggen"},
+    	{"LogoutFunction.caption", "Uitloggen"},
     	{"AdminFunction.caption", "Sample admin function"},
     	
-    	{"LoginWindow.caption", "Login"},
+    	{"LoginWindow.caption", "Inloggen"},
     	{"LoginFormFieldFactory.email", "E-mail"},
     	{"LoginFormFieldFactory.password", "Password"},
-    	{"LoginForm.loginButton.caption", "Login"},
-    	{"LoginForm.description", "Please enter the login and password with which you registered."},
-		{"LoginForm.BadCredentialsException", "Your email and/or password are incorrect."},
-		{"LoginForm.DisabledException","Your account is currently disabled."},
+    	{"LoginForm.loginButton.caption", "Inloggen"},
+    	{"LoginForm.description", "Voer hier het e-mail adres en wachtwoord in waarmee u zich geregistreerd heeft. " +
+				"Indien u nog niet geregistreerd bent, click dan op registreren om u voor het eerst aan te melden." },
+		{"LoginForm.BadCredentialsException", "Uw gebruikersnaam en/of wachtwoord zijn niet correct."},
+		{"LoginForm.DisabledException","Uw account is nog niet geactiveerd. Controleer of of je een e-mail hebt ontvangen met activatie link."},
     };
     
 }

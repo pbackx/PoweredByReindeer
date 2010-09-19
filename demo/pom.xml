@@ -6,10 +6,37 @@
   	<version>0.0.1-SNAPSHOT</version>
   </parent>
 	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.pow</groupId>
 	<artifactId>pow-demo</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<name>Powered by Reindeer demo webapp</name>
+	<description>Powered by Reindeer is a high-level application framework integrating Vaadin, Spring and Google AppEngine.
+	This is a sample application, showing how you'd use the Powered by Reindeer core.</description>
 	<url>http://www.streamhead.com/vaadin-engine-security-release/</url>
+	<licenses>
+		<license>
+			<name>Apache License 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.html</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+	<scm>
+		<url>http://github.com/pbackx/PoweredByReindeer</url>
+		<connection>git@github.com:pbackx/PoweredByReindeer.git</connection>
+	</scm>
+	<developers>
+		<developer>
+			<id>pbackx</id>
+			<name>Peter Backx</name>
+			<email>peter.backx@gmail.com</email>
+			<url>http://www.streamhead.com</url>
+			<roles>
+				<role>architect</role>
+				<role>developer</role>
+			</roles>
+		</developer>
+  	</developers>
 	
 	<dependencies>
     <dependency>

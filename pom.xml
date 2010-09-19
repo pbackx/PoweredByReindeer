@@ -3,11 +3,12 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.pow</groupId>
 	<artifactId>pow</artifactId>
-	<packaging>pom</packaging>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Powered by Reindeer</name>
+	<packaging>pom</packaging>
+	<name>Powered by Reindeer parent</name>
+	<description>Powered by Reindeer is a high-level application framework integrating 
+  Vaadin, Spring and Google AppEngine.</description>
 	<url>http://www.streamhead.com/vaadin-engine-security-release/</url>
-	
 	<licenses>
 		<license>
 			<name>Apache License 2.0</name>
@@ -15,6 +16,22 @@
 			<distribution>repo</distribution>
 		</license>
 	</licenses>
+ 	<scm>
+		<url>http://github.com/pbackx/PoweredByReindeer</url>
+		<connection>git@github.com:pbackx/PoweredByReindeer.git</connection>
+	</scm>
+	<developers>
+		<developer>
+			<id>pbackx</id>
+			<name>Peter Backx</name>
+			<email>peter.backx@gmail.com</email>
+			<url>http://www.streamhead.com</url>
+			<roles>
+				<role>architect</role>
+				<role>developer</role>
+			</roles>
+		</developer>
+ 	</developers>
 
 	<properties>
 		<appengine.version>1.3.7</appengine.version>
@@ -25,6 +42,7 @@
 		<aspectj.version>1.6.9</aspectj.version>
 	</properties>
 
+  <!-- needed for jdo2-api 2.3-ec -->
   <repositories>
     <repository>
       <id>datanucleus</id>
@@ -32,6 +50,24 @@
       <name>datanucleus repository</name>
     </repository>
   </repositories>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-gpg-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>sign-artifacts</id>
+            <phase>verify</phase>
+            <goals>
+              <goal>sign</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
 
   <modules>
     <module>demo</module>
