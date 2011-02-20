@@ -17,17 +17,8 @@ package com.pow.domain.user;
 
 import java.io.Serializable;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Configurable;
-import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.BadCredentialsException;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
-
 import com.google.appengine.api.datastore.Key;
 
-@Configurable
 public class User implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -40,21 +31,11 @@ public class User implements Serializable {
 	
 	private Boolean active = false;
 	
-	@Autowired
-	transient private AuthenticationManager authenticationManager;
-	
-	public Authentication authenticate()
-	{
-		UsernamePasswordAuthenticationToken token = 
-			new UsernamePasswordAuthenticationToken(email, password);
-		
-		Authentication auth = authenticationManager.authenticate(token);
-		if(auth != null) {
-			SecurityContextHolder.getContext().setAuthentication(auth);
-			return auth;
+	public User authenticate() throws BadCredentialsException {
+		if(password.equals("test")) {
+			return this;
 		}
-		
-		throw new BadCredentialsException("E-mail en/of wachtwoord zijn niet correct.");
+		throw new BadCredentialsException();
 	}
 	
 	public String getEmail() {
@@ -127,5 +108,9 @@ public class User implements Serializable {
 		} else if (!password.equals(other.password))
 			return false;
 		return true;
+	}
+	
+	public class BadCredentialsException extends Exception {
+		private static final long serialVersionUID = 1L;
 	}
 }

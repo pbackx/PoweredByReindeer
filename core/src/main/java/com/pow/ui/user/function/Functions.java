@@ -16,13 +16,14 @@
 package com.pow.ui.user.function;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Functions implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	
-	private List<Function> functions;
+	private List<Function> functions = new ArrayList<Function>();
 
 	public List<Function> getFunctions() {
 		return functions;
@@ -32,6 +33,9 @@ public class Functions implements Serializable {
 		this.functions = functions;
 	}
 	
-	
+	public void addFunction(Function function)
+	{
+		this.functions.add(function);
+	}
 	
 }

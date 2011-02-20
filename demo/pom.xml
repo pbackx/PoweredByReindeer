@@ -1,10 +1,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-  <parent>
-   	<groupId>com.pow</groupId>
-  	<artifactId>pow</artifactId>
-  	<version>0.0.1-SNAPSHOT</version>
-  </parent>
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<parent>
+		<groupId>com.pow</groupId>
+		<artifactId>pow</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.pow</groupId>
 	<artifactId>pow-demo</artifactId>
@@ -36,115 +36,26 @@
 				<role>developer</role>
 			</roles>
 		</developer>
-  	</developers>
-	
+	</developers>
+
 	<dependencies>
-    <dependency>
-     	<groupId>com.pow</groupId>
-    	<artifactId>pow-core</artifactId>
-    	<version>${project.version}</version>
-    </dependency>
+		<dependency>
+			<groupId>com.pow</groupId>
+			<artifactId>pow-core</artifactId>
+			<version>${project.version}</version>
+			<type>war</type>
+		</dependency>
 	</dependencies>
 
 	<build>
-		<finalName>pow-demo</finalName>
-		<outputDirectory>src/main/webapp/WEB-INF/classes</outputDirectory>
 		<plugins>
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
+				<groupId>net.kindleit</groupId>
+				<artifactId>maven-gae-plugin</artifactId>
+				<version>0.8.1</version>
 				<configuration>
-					<source>1.6</source>
-					<target>1.6</target>
-					<encoding>ISO-8859-1</encoding>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-resources-plugin</artifactId>
-				<configuration>
-					<encoding>ISO-8859-1</encoding>
-				</configuration>
-			</plugin>
-			<plugin>
-				<artifactId>maven-clean-plugin</artifactId>
-				<configuration>
-					<filesets>
-						<fileset>
-							<directory>src/main/webapp/WEB-INF/lib</directory>
-							<includes>
-								<include>*.jar</include>
-							</includes>
-							<followSymlinks>false</followSymlinks>
-						</fileset>
-					</filesets>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-dependency-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>copy-dependencies</id>
-						<phase>clean</phase>
-						<goals>
-							<goal>copy-dependencies</goal>
-						</goals>
-						<configuration>
-							<outputDirectory>src/main/webapp/WEB-INF/lib</outputDirectory>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-war-plugin</artifactId>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-eclipse-plugin</artifactId>
-				<configuration>
-					<wtpversion>2.0</wtpversion>
-					<classpathContainers>
-						<classpathContainer>com.google.appengine.eclipse.core.GAE_CONTAINER</classpathContainer>
-					</classpathContainers>
-					<buildcommands>
-						<buildcommand>org.eclipse.jdt.core.javabuilder</buildcommand>
-						<buildcommand>com.google.gdt.eclipse.core.webAppProjectValidator</buildcommand>
-						<buildcommand>com.google.appengine.eclipse.core.enhancerbuilder</buildcommand>
-						<buildcommand>com.google.appengine.eclipse.core.projectValidator</buildcommand>
-						<buildCommand>
-							<name>org.eclipse.ajdt.core.ajbuilder</name>
-							<arguments>
-								<aspectPath>org.springframework.aspects</aspectPath>
-								<!--  this is supposed to add spring-aspects.jar to the aspectj aspect path,
-								I'm not sure it works. If I ever want to look into this a little more, here's some
-								info: http://forum.springsource.org/archive/index.php/t-27243.html -->
-							</arguments>
-						</buildCommand>
-						<buildCommand>
-							<name>org.springframework.ide.eclipse.core.springbuilder</name>
-						</buildCommand>
-					</buildcommands>
-					<additionalProjectnatures>
-						<projectnature>org.eclipse.jdt.core.javanature</projectnature>
-						<projectnature>com.google.appengine.eclipse.core.gaeNature</projectnature>
-						<projectnature>com.google.gdt.eclipse.core.webAppNature</projectnature>
-						<projectnature>com.vaadin.integration.eclipse.widgetsetNature</projectnature>
-						<projectnature>org.eclipse.ajdt.ui.ajnature</projectnature>
-						<projectnature>org.springframework.ide.eclipse.core.springnature</projectnature>
-					</additionalProjectnatures>
-					<excludes>
-						<!-- Included in GAE_CONTAINER -->
-						<exclude>com.google.appengine:appengine-api-1.0-sdk</exclude>
-						<exclude>com.google.appengine:appengine-api-1.0-labs</exclude>
-						<exclude>com.google.appengine.orm:datanucleus-appengine</exclude>
-						<exclude>org.datanucleus:datanucleus-jpa</exclude>
-						<exclude>org.datanucleus:datanucleus-core</exclude>
-						<exclude>org.apache.geronimo.specs:geronimo-jpa_3.0_spec</exclude>
-						<exclude>org.apache.geronimo.specs:geronimo-jta_1.1_spec</exclude>
-						<exclude>javax.jdo:jdo2-api</exclude>
-					</excludes>
+					<serverId>appengine.google.com</serverId>
+					<sdkDir>${gae.home}</sdkDir>
 				</configuration>
 			</plugin>
 		</plugins>

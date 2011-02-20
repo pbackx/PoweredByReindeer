@@ -1,26 +1,27 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-  	<parent>
-   		<groupId>com.pow</groupId>
-  		<artifactId>pow</artifactId>
-  		<version>0.0.1-SNAPSHOT</version>
-  	</parent>
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<parent>
+		<groupId>com.pow</groupId>
+		<artifactId>pow</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.pow</groupId>
 	<artifactId>pow-core</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 	<name>Powered by Reindeer core</name>
 	<description>Powered by Reindeer is a high-level application framework integrating Vaadin, Spring and Google AppEngine.
 	This is the core of the project which you'll want to depend on in your own.</description>
 	<url>http://www.streamhead.com/vaadin-engine-security-release/</url>
 	<licenses>
-        <license>
-            <name>Apache License 2.0</name>
-            <url>http://www.apache.org/licenses/LICENSE-2.0.html</url>
-            <distribution>repo</distribution>
-        </license>
-    </licenses>
+		<license>
+			<name>Apache License 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.html</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
 	<scm>
 		<url>http://github.com/pbackx/PoweredByReindeer</url>
 		<connection>git@github.com:pbackx/PoweredByReindeer.git</connection>
@@ -36,118 +37,33 @@
 				<role>developer</role>
 			</roles>
 		</developer>
-  	</developers>
-	
+	</developers>
+
+	<properties>
+		<vaadin.version>6.5.1</vaadin.version>
+		<gae.version>1.4.0</gae.version>
+		<gae.port>8888</gae.port>
+	</properties>
+
 	<dependencies>
+		<!-- Google App Engine meta-package -->
+		<dependency>
+			<groupId>net.kindleit</groupId>
+			<artifactId>gae-runtime</artifactId>
+			<version>${gae.version}</version>
+			<type>pom</type>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.transaction</groupId>
+			<artifactId>jta</artifactId>
+			<version>1.1</version>
+		</dependency>
+
 		<dependency>
 			<groupId>com.vaadin</groupId>
 			<artifactId>vaadin</artifactId>
 			<version>${vaadin.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.google.appengine</groupId>
-			<artifactId>appengine-api-1.0-sdk</artifactId>
-			<version>${appengine.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.google.appengine</groupId>
-			<artifactId>appengine-api-labs</artifactId>
-			<version>${appengine.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.google.appengine.orm</groupId>
-			<artifactId>datanucleus-appengine</artifactId>
-			<version>1.0.7</version>
-		</dependency>
-		<dependency>
-			<groupId>org.datanucleus</groupId>
-			<artifactId>datanucleus-jpa</artifactId>
-			<version>${datanucleus.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.datanucleus</groupId>
-			<artifactId>datanucleus-core</artifactId>
-			<version>${datanucleus.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.geronimo.specs</groupId>
-			<artifactId>geronimo-jpa_3.0_spec</artifactId>
-			<version>1.1.1</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.geronimo.specs</groupId>
-			<artifactId>geronimo-jta_1.1_spec</artifactId>
-			<version>1.1.1</version>
-		</dependency>
-		<dependency>
-			<groupId>javax.jdo</groupId>
-			<artifactId>jdo2-api</artifactId>
-			<version>2.3-ec</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-aop</artifactId>
-			<version>${spring.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-aspects</artifactId>
-			<version>${spring.version}</version>
-		</dependency>
-  		<dependency>
-    		<groupId>org.springframework</groupId>
-    		<artifactId>spring-beans</artifactId>
-    		<version>${spring.version}</version>
-  		</dependency>
-  		<dependency>
-    		<groupId>org.springframework</groupId>
-    		<artifactId>spring-context</artifactId>
-    		<version>${spring.version}</version>
-		</dependency>
-		<dependency>
-    		<groupId>org.springframework</groupId>
-    		<artifactId>spring-core</artifactId>
-    		<version>${spring.version}</version>
-  		</dependency>
-  		<dependency>
-    		<groupId>org.springframework</groupId>
-    		<artifactId>spring-web</artifactId>
-    		<version>${spring.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-tx</artifactId>
-			<version>${spring.version}</version>
-		</dependency>
-  		<!-- dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-orm</artifactId>
-			<version>${spring.version}</version>
-		</dependency -->
-		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-core</artifactId>
-			<version>${spring-security.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-config</artifactId>
-			<version>${spring-security.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-web</artifactId>
-			<version>${spring-security.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.aspectj</groupId>
-			<artifactId>aspectjrt</artifactId>
-			<version>${aspectj.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.aspectj</groupId>
-			<artifactId>aspectjweaver</artifactId>
-			<version>${aspectj.version}</version>
 		</dependency>
 	</dependencies>
 
@@ -188,89 +104,6 @@
 				</executions>
 			</plugin>
 			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>aspectj-maven-plugin</artifactId>
-				<version>1.0</version>
-				<dependencies>
-					<dependency>
-						<groupId>org.aspectj</groupId>
-						<artifactId>aspectjrt</artifactId>
-						<version>${aspectj.version}</version>
-					</dependency>
-					<dependency>
-						<groupId>org.aspectj</groupId>
-						<artifactId>aspectjtools</artifactId>
-						<version>${aspectj.version}</version>
-					</dependency>
-    			</dependencies>
-				<executions>
-					<execution>
-						<goals>
-							<goal>compile</goal>
-							<goal>test-compile</goal>
-						</goals>
-					</execution>
-				</executions>
-				<configuration>
-					<aspectLibraries>
-						<aspectLibrary>
-							<groupId>org.springframework</groupId>
-							<artifactId>spring-aspects</artifactId>
-						</aspectLibrary>
-					</aspectLibraries>
-					<source>1.6</source>
-					<target>1.6</target>
-					<encoding>ISO-8859-1</encoding>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-eclipse-plugin</artifactId>
-				<configuration>
-					<wtpversion>2.0</wtpversion>
-					<classpathContainers>
-						<classpathContainer>com.google.appengine.eclipse.core.GAE_CONTAINER</classpathContainer>
-					</classpathContainers>
-					<buildcommands>
-						<buildcommand>org.eclipse.jdt.core.javabuilder</buildcommand>
-						<buildcommand>com.google.gdt.eclipse.core.webAppProjectValidator</buildcommand>
-						<buildcommand>com.google.appengine.eclipse.core.enhancerbuilder</buildcommand>
-						<buildcommand>com.google.appengine.eclipse.core.projectValidator</buildcommand>
-						<buildCommand>
-							<name>org.eclipse.ajdt.core.ajbuilder</name>
-							<arguments>
-								<aspectPath>org.springframework.aspects</aspectPath>
-								<!--  this is supposed to add spring-aspects.jar to the aspectj aspect path,
-								I'm not sure it works. If I ever want to look into this a little more, here's some
-								info: http://forum.springsource.org/archive/index.php/t-27243.html -->
-							</arguments>
-						</buildCommand>
-						<buildCommand>
-							<name>org.springframework.ide.eclipse.core.springbuilder</name>
-						</buildCommand>
-					</buildcommands>
-					<additionalProjectnatures>
-						<projectnature>org.eclipse.jdt.core.javanature</projectnature>
-						<projectnature>com.google.appengine.eclipse.core.gaeNature</projectnature>
-						<projectnature>com.google.gdt.eclipse.core.webAppNature</projectnature>
-						<projectnature>com.vaadin.integration.eclipse.widgetsetNature</projectnature>
-						<projectnature>org.eclipse.ajdt.ui.ajnature</projectnature>
-						<projectnature>org.springframework.ide.eclipse.core.springnature</projectnature>
-					</additionalProjectnatures>
-					<excludes>
-						<!-- Included in GAE_CONTAINER -->
-						<exclude>com.google.appengine:appengine-api-1.0-sdk</exclude>
-						<exclude>com.google.appengine:appengine-api-1.0-labs</exclude>
-						<exclude>com.google.appengine.orm:datanucleus-appengine</exclude>
-						<exclude>org.datanucleus:datanucleus-jpa</exclude>
-						<exclude>org.datanucleus:datanucleus-core</exclude>
-						<exclude>org.apache.geronimo.specs:geronimo-jpa_3.0_spec</exclude>
-						<exclude>org.apache.geronimo.specs:geronimo-jta_1.1_spec</exclude>
-						<exclude>javax.jdo:jdo2-api</exclude>
-					</excludes>
-				</configuration>
-			</plugin>
-			<plugin>
 				<groupId>org.datanucleus</groupId>
 				<artifactId>maven-datanucleus-plugin</artifactId>
 				<version>1.1.4</version>
@@ -285,12 +118,23 @@
 					<dependency>
 						<groupId>org.datanucleus</groupId>
 						<artifactId>datanucleus-core</artifactId>
-						<version>${datanucleus.version}</version>
+						<version>1.1.5</version>
+						<exclusions>
+							<exclusion>
+								<groupId>javax.transaction</groupId>
+								<artifactId>transaction-api</artifactId>
+							</exclusion>
+						</exclusions>
 					</dependency>
 					<dependency>
 						<groupId>org.datanucleus</groupId>
-						<artifactId>datanucleus-jpa</artifactId>
-						<version>${datanucleus.version}</version>
+						<artifactId>datanucleus-rdbms</artifactId>
+						<version>1.1.5</version>
+					</dependency>
+					<dependency>
+						<groupId>org.datanucleus</groupId>
+						<artifactId>datanucleus-enhancer</artifactId>
+						<version>1.1.4</version>
 					</dependency>
 				</dependencies>
 				<executions>
@@ -301,6 +145,26 @@
 						</goals>
 					</execution>
 				</executions>
+			</plugin>
+
+			<!-- The actual maven-gae-plugin. Type "mvn gae:run" to run project, "mvn 
+				gae:deploy" to upload to GAE. -->
+			<plugin>
+				<groupId>net.kindleit</groupId>
+				<artifactId>maven-gae-plugin</artifactId>
+				<version>0.8.1</version>
+				<configuration>
+					<serverId>appengine.google.com</serverId>
+					<sdkDir>${gae.home}</sdkDir>
+				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>net.kindleit</groupId>
+						<artifactId>gae-runtime</artifactId>
+						<version>${gae.version}</version>
+						<type>pom</type>
+					</dependency>
+				</dependencies>
 			</plugin>
 		</plugins>
 	</build>

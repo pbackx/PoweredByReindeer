@@ -41,7 +41,6 @@ public class PowBundle_en extends ListResourceBundle implements Serializable {
     	{"LoginForm.loginButton.caption", "Login"},
     	{"LoginForm.description", "Please enter the login and password with which you registered."},
 		{"LoginForm.BadCredentialsException", "Your email and/or password are incorrect."},
-		{"LoginForm.DisabledException","Your account is currently disabled."},
     };
     
 }

@@ -42,7 +42,6 @@ public class PowBundle_nl extends ListResourceBundle implements Serializable {
     	{"LoginForm.description", "Voer hier het e-mail adres en wachtwoord in waarmee u zich geregistreerd heeft. " +
 				"Indien u nog niet geregistreerd bent, click dan op registreren om u voor het eerst aan te melden." },
 		{"LoginForm.BadCredentialsException", "Uw gebruikersnaam en/of wachtwoord zijn niet correct."},
-		{"LoginForm.DisabledException","Uw account is nog niet geactiveerd. Controleer of of je een e-mail hebt ontvangen met activatie link."},
     };
     
 }

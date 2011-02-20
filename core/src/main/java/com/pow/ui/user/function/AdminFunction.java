@@ -15,10 +15,6 @@
  */
 package com.pow.ui.user.function;
 
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.authority.GrantedAuthorityImpl;
-import org.springframework.security.core.context.SecurityContextHolder;
-
 import com.pow.MainApplication;
 import com.pow.domain.user.User;
 
@@ -33,11 +29,11 @@ public class AdminFunction implements Function {
 
 	@Override
 	public boolean isAvailable(User user) {
-		final Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-		if(authentication!=null && authentication.getAuthorities().contains(new GrantedAuthorityImpl("ROLE_ADMIN")))
-		{
-			return true;
-		}
+//		final Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+//		if(authentication!=null && authentication.getAuthorities().contains(new GrantedAuthorityImpl("ROLE_ADMIN")))
+//		{
+//			return true;
+//		}
 		return false;
 	}
 

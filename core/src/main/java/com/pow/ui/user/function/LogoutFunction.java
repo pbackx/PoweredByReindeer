@@ -15,9 +15,6 @@
  */
 package com.pow.ui.user.function;
 
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
-
 import com.pow.MainApplication;
 import com.pow.domain.user.User;
 
@@ -32,13 +29,11 @@ public class LogoutFunction implements Function {
 
 	@Override
 	public boolean isAvailable(User user) {
-		final Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-		return authentication!=null && !"anonymousUser".equals(authentication.getPrincipal());
+		return user != null;
 	}
 
 	@Override
 	public void launch(MainApplication application) {
-		SecurityContextHolder.clearContext();
 		application.close();
 	}
 

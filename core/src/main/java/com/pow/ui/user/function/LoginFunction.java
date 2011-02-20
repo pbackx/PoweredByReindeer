@@ -15,9 +15,6 @@
  */
 package com.pow.ui.user.function;
 
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
-
 import com.pow.MainApplication;
 import com.pow.domain.user.User;
 import com.pow.ui.user.LoginWindow;
@@ -33,8 +30,7 @@ public class LoginFunction implements Function {
 
 	@Override
 	public boolean isAvailable(User user) {
-		final Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-		return authentication==null || "anonymousUser".equals(authentication.getPrincipal());
+		return user == null;
 	}
 
 	@Override

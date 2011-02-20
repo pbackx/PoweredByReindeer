@@ -16,24 +16,24 @@
 package com.pow;
 
 import java.util.ResourceBundle;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Configurable;
+import java.util.ServiceLoader;
 
 import com.vaadin.Application;
 import com.pow.ui.MainWindow;
+import com.pow.ui.MainWindowImpl;
 import com.pow.ui.user.LoginForm.LoggedinEvent;
 import com.pow.ui.user.LoginForm.LoggedinListener;
+import com.pow.ui.user.function.AdminFunction;
 import com.pow.ui.user.function.Functions;
+import com.pow.ui.user.function.LoginFunction;
+import com.pow.ui.user.function.LogoutFunction;
 
-@Configurable
 public class MainApplication extends Application implements LoggedinListener {
 
 	private static final long serialVersionUID = 1L;
 
-	private MainWindow mainWindow;
+	private MainWindowImpl mainWindow;
 	
-	@Autowired
 	private Functions userFunctions;
 	
 	/**
@@ -46,9 +46,19 @@ public class MainApplication extends Application implements LoggedinListener {
 	
 	@Override
 	public void init() {
+		userFunctions = new Functions();
+		userFunctions.addFunction(new LoginFunction());
+		userFunctions.addFunction(new LogoutFunction());
+		userFunctions.addFunction(new AdminFunction());
+		
 		i18n = ResourceBundle.getBundle("com.pow.i18n.PowBundle", getLocale());
 		
-		mainWindow = new MainWindow(this);
+//		ServiceLoader<MainWindow> mainWindows = ServiceLoader.load(MainWindow.class);
+//		for(MainWindow mainWindow : mainWindows) {
+//			setMainWindow(mainWindow.getMainWindow());
+//			break;
+//		}
+		mainWindow = new MainWindowImpl(this);
 		setMainWindow(mainWindow);
 	}
 

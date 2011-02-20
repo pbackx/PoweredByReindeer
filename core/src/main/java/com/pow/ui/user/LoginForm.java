@@ -18,9 +18,6 @@ package com.pow.ui.user;
 import java.io.Serializable;
 import java.lang.reflect.Method;
 
-import org.springframework.security.authentication.BadCredentialsException;
-import org.springframework.security.authentication.DisabledException;
-
 import com.vaadin.data.util.BeanItem;
 import com.vaadin.terminal.UserError;
 import com.vaadin.ui.Button;
@@ -67,10 +64,8 @@ public class LoginForm extends Form implements ClickListener {
 			try {
 				user.authenticate();
 				fireLoggedin(user);
-			} catch (BadCredentialsException e) {
+			} catch (User.BadCredentialsException e) {
 				setComponentError(new UserError(app.getMessage("LoginForm.BadCredentialsException")));
-			} catch (DisabledException e) {
-				setComponentError(new UserError(app.getMessage("LoginForm.DisabledException")));
 			}
 		} 
 	}

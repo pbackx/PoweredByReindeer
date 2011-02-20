@@ -1,18 +1,14 @@
 This project serves as a starting point to create Vaadin applications on
 Google's App Engine.
 
-It uses Maven to create portable and reproducable builds. The Maven file also
-includes setup for an Eclipse workspace. If you don't use Eclipse, you might
-want to remove those sections.
+It uses Maven to create portable and reproducible builds.
 
 To get started, just run:
-> mvn clean
+> mvn install
 
-And if you want to create the Eclipse project:
-> mvn eclipse:eclipse
-
-(See http://www.streamhead.com/maven-spring-vaadin-appengine/ for more 
-information)
+And if you want to run the (limited) demo application:
+> cd demo
+> mvn gae:run
 
 
 
