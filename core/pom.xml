@@ -136,6 +136,13 @@
 						<artifactId>datanucleus-enhancer</artifactId>
 						<version>1.1.4</version>
 					</dependency>
+					<!-- if we don't explicitely define the jdo2-api version, Maven 
+              will try to load 2.3-ec which is not in the central repo -->
+          <dependency>
+            <groupId>javax.jdo</groupId>
+            <artifactId>jdo2-api</artifactId>
+            <version>2.3-eb</version>
+          </dependency>
 				</dependencies>
 				<executions>
 					<execution>
