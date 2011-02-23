@@ -5,14 +5,15 @@
 		<artifactId>pow</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
+
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.pow</groupId>
-	<artifactId>pow-demo</artifactId>
+	<artifactId>pow-war</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>Powered by Reindeer demo webapp</name>
+	<name>Powered by Reindeer WAR overlay</name>
 	<description>Powered by Reindeer is a high-level application framework integrating Vaadin, Spring and Google AppEngine.
-	This is a sample application, showing how you'd use the Powered by Reindeer core.</description>
+	This is the war file of the project which you need to overlay in your own projects.</description>
 	<url>http://www.streamhead.com/vaadin-engine-security-release/</url>
 	<licenses>
 		<license>
@@ -38,17 +39,23 @@
 		</developer>
 	</developers>
 
+	<properties>
+		<gae.port>8888</gae.port>
+	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>com.pow</groupId>
-			<artifactId>pow-war</artifactId>
+			<artifactId>pow-core</artifactId>
 			<version>${project.version}</version>
-			<type>war</type>
 		</dependency>
 	</dependencies>
 
 	<build>
+		<finalName>pow-war</finalName>
 		<plugins>
+			<!-- The actual maven-gae-plugin. Type "mvn gae:run" to run project, "mvn 
+				gae:deploy" to upload to GAE. -->
 			<plugin>
 				<groupId>net.kindleit</groupId>
 				<artifactId>maven-gae-plugin</artifactId>
@@ -57,6 +64,14 @@
 					<serverId>appengine.google.com</serverId>
 					<sdkDir>${gae.home}</sdkDir>
 				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>net.kindleit</groupId>
+						<artifactId>gae-runtime</artifactId>
+						<version>${gae.version}</version>
+						<type>pom</type>
+					</dependency>
+				</dependencies>
 			</plugin>
 		</plugins>
 	</build>

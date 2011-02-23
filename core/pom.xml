@@ -10,7 +10,7 @@
 	<groupId>com.pow</groupId>
 	<artifactId>pow-core</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 	<name>Powered by Reindeer core</name>
 	<description>Powered by Reindeer is a high-level application framework integrating Vaadin, Spring and Google AppEngine.
 	This is the core of the project which you'll want to depend on in your own.</description>
@@ -42,7 +42,6 @@
 	<properties>
 		<vaadin.version>6.5.1</vaadin.version>
 		<gae.version>1.4.0</gae.version>
-		<gae.port>8888</gae.port>
 	</properties>
 
 	<dependencies>
@@ -152,26 +151,6 @@
 						</goals>
 					</execution>
 				</executions>
-			</plugin>
-
-			<!-- The actual maven-gae-plugin. Type "mvn gae:run" to run project, "mvn 
-				gae:deploy" to upload to GAE. -->
-			<plugin>
-				<groupId>net.kindleit</groupId>
-				<artifactId>maven-gae-plugin</artifactId>
-				<version>0.8.1</version>
-				<configuration>
-					<serverId>appengine.google.com</serverId>
-					<sdkDir>${gae.home}</sdkDir>
-				</configuration>
-				<dependencies>
-					<dependency>
-						<groupId>net.kindleit</groupId>
-						<artifactId>gae-runtime</artifactId>
-						<version>${gae.version}</version>
-						<type>pom</type>
-					</dependency>
-				</dependencies>
 			</plugin>
 		</plugins>
 	</build>

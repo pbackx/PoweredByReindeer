@@ -41,8 +41,9 @@
 
 
 	<modules>
-		<module>demo</module>
 		<module>core</module>
+		<module>war</module>
+		<module>demo</module>
 	</modules>
 
   <profiles>
