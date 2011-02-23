@@ -33,6 +33,13 @@
 		</developer>
 	</developers>
 
+  <parent>
+    <groupId>org.sonatype.oss</groupId>
+    <artifactId>oss-parent</artifactId>
+    <version>6</version>
+  </parent>
+
+
 	<modules>
 		<module>demo</module>
 		<module>core</module>
