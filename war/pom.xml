@@ -41,7 +41,7 @@
 
 	<properties>
 		<gae.port>8888</gae.port>
-		<gae.version>1.4.3</gae.version>
+		<gae.version>1.5.0.1</gae.version>
 	</properties>
 
 	<dependencies>
@@ -60,7 +60,6 @@
 			<plugin>
 				<groupId>net.kindleit</groupId>
 				<artifactId>maven-gae-plugin</artifactId>
-				<version>0.8.1</version>
 				<configuration>
 					<serverId>appengine.google.com</serverId>
 					<sdkDir>${gae.home}</sdkDir>

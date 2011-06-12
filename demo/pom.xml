@@ -52,7 +52,6 @@
 			<plugin>
 				<groupId>net.kindleit</groupId>
 				<artifactId>maven-gae-plugin</artifactId>
-				<version>0.8.1</version>
 				<configuration>
 					<serverId>appengine.google.com</serverId>
 					<sdkDir>${gae.home}</sdkDir>
