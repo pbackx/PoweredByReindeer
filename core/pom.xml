@@ -40,8 +40,8 @@
 	</developers>
 
 	<properties>
-		<vaadin.version>6.6.1</vaadin.version>
-		<gae.version>1.5.0.1</gae.version>
+		<vaadin.version>6.6.2</vaadin.version>
+		<gae.version>1.5.1</gae.version>
 	</properties>
 
 	<dependencies>
