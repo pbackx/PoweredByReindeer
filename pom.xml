@@ -39,6 +39,10 @@
     <version>6</version>
   </parent>
 
+	<properties>
+		<vaadin.version>6.6.2</vaadin.version>
+		<gae.version>1.5.4</gae.version>
+	</properties>
 
 	<modules>
 		<module>core</module>

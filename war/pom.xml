@@ -41,7 +41,6 @@
 
 	<properties>
 		<gae.port>8888</gae.port>
-		<gae.version>1.5.1</gae.version>
 	</properties>
 
 	<dependencies>

@@ -39,11 +39,6 @@
 		</developer>
 	</developers>
 
-	<properties>
-		<vaadin.version>6.6.2</vaadin.version>
-		<gae.version>1.5.1</gae.version>
-	</properties>
-
 	<dependencies>
 		<!-- Google App Engine meta-package -->
 		<dependency>
