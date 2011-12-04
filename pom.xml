@@ -40,8 +40,8 @@
   </parent>
 
 	<properties>
-		<vaadin.version>6.6.7</vaadin.version>
-		<gae.version>1.5.4</gae.version>
+		<vaadin.version>6.7.2</vaadin.version>
+		<gae.version>1.6.0</gae.version>
 	</properties>
 
 	<modules>
