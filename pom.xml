@@ -41,7 +41,7 @@
 
 	<properties>
 		<vaadin.version>6.7.2</vaadin.version>
-		<gae.version>1.6.0</gae.version>
+		<gae.version>1.6.6</gae.version>
 	</properties>
 
 	<modules>

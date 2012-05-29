@@ -16,5 +16,6 @@
 	
 	<sessions-enabled>true</sessions-enabled>
 	<precompilation-enabled>true</precompilation-enabled>
+	<threadsafe>true</threadsafe>
 	
 </appengine-web-app>
